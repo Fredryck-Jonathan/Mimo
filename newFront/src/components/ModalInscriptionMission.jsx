@@ -45,7 +45,9 @@ function ModalMission(props){
 
         const new_data = {
             id: data.id,
-            etat: "Confirmée",
+            duree:data.duree,
+            etat: "Confirmer",
+            point: data.points,
             etat_class: "confirmee",
             avec: data.utilisateur.prenom,
             avatar: data.utilisateur.avatar,

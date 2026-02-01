@@ -6,7 +6,7 @@ function ModalFinishMission(props){
 
 
 
-    console.log(props, props.data[props.index]);
+    //console.log(props, props.data[props.index]);
 
     function submitButton(e){
 
@@ -19,6 +19,9 @@ function ModalFinishMission(props){
         } else {
             console.log("check")
             setState(0)
+
+
+
         }
 
     }
@@ -26,13 +29,20 @@ function ModalFinishMission(props){
 
     console.log(props)
 
+    if (!props?.data || props.index == null || props.data[props.index] === undefined) {
+        
+        return null; // ou un loader
+    }
 
+    else {
 
-    return(
+        console.log(props.data[props.index])
+
+        return(
 
         <div className={`modal-finish${props.modalMesMissionIsOpen ? " active" : ""}`}>
 
-            {state ? (
+            {state && props ? (
 
             <div className="modal-finish__first-state">
 
@@ -53,24 +63,24 @@ function ModalFinishMission(props){
 
                         <div className="modal-finish__first-recap-1">
                             <div className="modal-finish__first-recap-img">
-                                <img src={`/assets/`} alt="" />
+                                <img src={`/assets/${props?.data[props.index].avatar}`} alt="" />
                             </div>
 
                             <div className="modal-finish__first-recap-text">
-                                <p className="modal-finish__first-recap-text-1">balade</p>
-                                <p className="modal-finish__first-recap-text-2">avec Andrée</p>  
+                                <p className="modal-finish__first-recap-text-1">{props.data[props.index].titre}</p>
+ 
                             </div>
  
                         </div>
 
-                        <p className="modal-finish__first-recap-date">Lundi 03/02 - 14h - 15h</p>
+                        <p className="modal-finish__first-recap-date">{props.data[props.index].creneaux.date} - {props.data[props.index].creneaux.heure}h / {Number(props.data[props.index].creneaux.heure) + Number(props.data[props.index].duree)}h</p>
 
                     </div>
 
 
                     <div className="modal-finish__recap-mot">
 
-                        <p>Un mot pour Andrée ? (optionnel)</p>
+                        <p>Un mot pour {} ? (optionnel)</p>
 
                         <textarea type="text" placeholder="Partage ton ressenti sur cette mission..." />
 
@@ -102,7 +112,7 @@ function ModalFinishMission(props){
 
                     <div className="modal-finish__second-state-content">
 
-                        <p>Felicitations, <br></br> Vous avez gagné {} point</p>
+                        <p>Felicitations, <br></br> Vous avez gagné {props.data[props.index].point} points</p>
 
                         <button 
                             onClick={(e) => {
@@ -126,6 +136,12 @@ function ModalFinishMission(props){
         </div>
 
     )
+
+
+
+    }
+        
+        
 
 
 }

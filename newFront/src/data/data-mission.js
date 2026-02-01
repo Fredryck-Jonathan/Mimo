@@ -57,7 +57,7 @@ const mission = [
         id: 2,
         status: 0,
         points: 40,
-        titre : "Balade avec Le Jenkins",
+        titre : "Balade avec Bernard",
         lieu: "Saint-Pol-sur-Mer",
         description: "",
         image: "foret.jpg",

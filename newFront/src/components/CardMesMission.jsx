@@ -2,8 +2,6 @@ function CardMesMission(props){
 
     console.log(props.data)
 
-
-
     return(
 
         <div className={`card-mes-mission ${props.data.etat_class}`}>
@@ -24,7 +22,7 @@ function CardMesMission(props){
             <p className="card-mes-mission__date">{props.data.date}</p>
 
 
-            <button className="card-mes-mission__button" disabled={props.data.etat_class !== "confirmee"}  onClick={(e) => {e.preventDefault(); props.setModalMesMissionIsOpen(true); props.setMesMissionSelected(props.number);} }>Terminé la mission</button>
+            <button className="card-mes-mission__button" disabled={props.data.etat_class !== "confirmee"}  onClick={(e) => {e.preventDefault(); props.setModalMesMissionIsOpen(true); props.setMesMissionSelected(props.number);} }>Terminer la mission</button>
 
         </div>
 

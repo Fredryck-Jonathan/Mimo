@@ -132,7 +132,7 @@ function Home() {
                         
                     <ModalInscriptionMission userData={userData} setUserData={setUserData} index={missionSelected} setModalIsOpen={setModalIsOpen} data={dataMission}  modalIsOpen={modalIsOpen}></ModalInscriptionMission>
 
-                    <ModalFinishMission index={mesMissionSelected} setModalMesMissionIsOpen={setModalMesMissionIsOpen} data={dataMesMission}  modalMesMissionIsOpen={modalMesMissionIsOpen} ></ModalFinishMission>
+                    <ModalFinishMission index={mesMissionSelected} setModalMesMissionIsOpen={setModalMesMissionIsOpen} data={userData?.mission}  modalMesMissionIsOpen={modalMesMissionIsOpen} ></ModalFinishMission>
 
 
                 </div>
